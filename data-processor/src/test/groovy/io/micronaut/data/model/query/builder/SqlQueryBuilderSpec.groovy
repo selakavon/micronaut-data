@@ -203,7 +203,7 @@ interface MyRepository {
         then:
         def e = thrown(IllegalArgumentException)
 
-        expect:AuthorJoinFe
+        expect:
         e.message == "Unsupported join type [OUTER_FETCH] by dialect [H2]"
 
     }
