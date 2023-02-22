@@ -41,21 +41,21 @@ abstract class AbstractJoinFetchSpec extends Specification {
     abstract BookRepository getBookRepository()
     abstract AuthorRepository getAuthorRepository()
 
-    abstract AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository()
+    abstract AuthorJoinTypeRepositories.AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository()
 
-    abstract AuthorJoinLeftRepository getAuthorJoinLeftRepository()
+    abstract AuthorJoinTypeRepositories.AuthorJoinLeftRepository getAuthorJoinLeftRepository()
 
-    abstract AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository()
+    abstract AuthorJoinTypeRepositories.AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository()
 
-    abstract AuthorJoinRightRepository getAuthorJoinRightRepository()
+    abstract AuthorJoinTypeRepositories.AuthorJoinRightRepository getAuthorJoinRightRepository()
 
-    abstract AuthorJoinOuterRepository getAuthorJoinOuterRepository()
+    abstract AuthorJoinTypeRepositories.AuthorJoinOuterRepository getAuthorJoinOuterRepository()
 
-    abstract AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository()
+    abstract AuthorJoinTypeRepositories.AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository()
 
-    abstract AuthorJoinFetchRepository getAuthorJoinFetchRepository()
+    abstract AuthorJoinTypeRepositories.AuthorJoinFetchRepository getAuthorJoinFetchRepository()
 
-    abstract AuthorJoinInnerRepository getAuthorJoinInnerRepository()
+    abstract AuthorJoinTypeRepositories.AuthorJoinInnerRepository getAuthorJoinInnerRepository()
 
     void setup() {
         saveSampleBooks()

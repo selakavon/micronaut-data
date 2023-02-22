@@ -18,74 +18,74 @@ class OracleXEJoinFetchSpec extends AbstractJoinFetchSpec implements OracleTestP
     }
 
     @Override
-    AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository() {
         return context.getBean(OracleXEAuthorJoinLeftFetchRepository)
     }
 
     @Override
-    AuthorJoinLeftRepository getAuthorJoinLeftRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinLeftRepository getAuthorJoinLeftRepository() {
         return context.getBean(OracleXEAuthorJoinLeftRepository)
     }
 
     @Override
-    AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository() {
         return context.getBean(OracleXEAuthorJoinRightFetchRepository)
     }
 
     @Override
-    AuthorJoinRightRepository getAuthorJoinRightRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinRightRepository getAuthorJoinRightRepository() {
         return context.getBean(OracleXEAuthorJoinRightRepository)
     }
 
     @Override
-    AuthorJoinOuterRepository getAuthorJoinOuterRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinOuterRepository getAuthorJoinOuterRepository() {
         return context.getBean(OracleXEAuthorJoinOuterRepository)
     }
 
     @Override
-    AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository() {
         return context.getBean(OracleXEAuthorJoinOuterFetchRepository)
     }
 
     @Override
-    AuthorJoinFetchRepository getAuthorJoinFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinFetchRepository getAuthorJoinFetchRepository() {
         return context.getBean(OracleXEAuthorJoinFetchRepository)
     }
 
     @Override
-    AuthorJoinInnerRepository getAuthorJoinInnerRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinInnerRepository getAuthorJoinInnerRepository() {
         return context.getBean(OracleXEAuthorJoinInnerRepository)
     }
 }
 
 @JdbcRepository(dialect = Dialect.ORACLE)
-interface OracleXEAuthorJoinFetchRepository extends AuthorJoinFetchRepository {
+interface OracleXEAuthorJoinFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.ORACLE)
-interface OracleXEAuthorJoinInnerRepository extends AuthorJoinInnerRepository {
+interface OracleXEAuthorJoinInnerRepository extends AuthorJoinTypeRepositories.AuthorJoinInnerRepository {
 }
 
 @JdbcRepository(dialect = Dialect.ORACLE)
-interface OracleXEAuthorJoinLeftFetchRepository extends AuthorJoinLeftFetchRepository {
+interface OracleXEAuthorJoinLeftFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinLeftFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.ORACLE)
-interface OracleXEAuthorJoinLeftRepository extends AuthorJoinLeftRepository {
+interface OracleXEAuthorJoinLeftRepository extends AuthorJoinTypeRepositories.AuthorJoinLeftRepository {
 }
 
 @JdbcRepository(dialect = Dialect.ORACLE)
-interface OracleXEAuthorJoinOuterFetchRepository extends AuthorJoinOuterFetchRepository {
+interface OracleXEAuthorJoinOuterFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinOuterFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.ORACLE)
-interface OracleXEAuthorJoinOuterRepository extends AuthorJoinOuterRepository {
+interface OracleXEAuthorJoinOuterRepository extends AuthorJoinTypeRepositories.AuthorJoinOuterRepository {
 }
 
 @JdbcRepository(dialect = Dialect.ORACLE)
-interface OracleXEAuthorJoinRightFetchRepository extends AuthorJoinRightFetchRepository {
+interface OracleXEAuthorJoinRightFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinRightFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.ORACLE)
-interface OracleXEAuthorJoinRightRepository extends AuthorJoinRightRepository {
+interface OracleXEAuthorJoinRightRepository extends AuthorJoinTypeRepositories.AuthorJoinRightRepository {
 }

@@ -4,8 +4,6 @@ import io.micronaut.data.jdbc.annotation.JdbcRepository
 import io.micronaut.data.model.query.builder.sql.Dialect
 import io.micronaut.data.tck.repositories.*
 import io.micronaut.data.tck.tests.AbstractJoinFetchSpec
-import io.micronaut.inject.visitor.VisitorContext
-import jakarta.inject.Inject
 
 class H2JoinFetchSpec extends AbstractJoinFetchSpec implements H2TestPropertyProvider {
 
@@ -24,66 +22,66 @@ class H2JoinFetchSpec extends AbstractJoinFetchSpec implements H2TestPropertyPro
     }
 
     @Override
-    AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository() {
         return context.getBean(H2AuthorJoinLeftFetchRepository)
     }
 
     @Override
-    AuthorJoinLeftRepository getAuthorJoinLeftRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinLeftRepository getAuthorJoinLeftRepository() {
         return context.getBean(H2AuthorJoinLeftRepository)
     }
 
     @Override
-    AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository() {
         return context.getBean(H2AuthorJoinRightFetchRepository)
     }
 
     @Override
-    AuthorJoinRightRepository getAuthorJoinRightRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinRightRepository getAuthorJoinRightRepository() {
         return context.getBean(H2AuthorJoinRightRepository)
     }
 
     @Override
-    AuthorJoinOuterRepository getAuthorJoinOuterRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinOuterRepository getAuthorJoinOuterRepository() {
         throw new UnsupportedOperationException("Full Outer Join is not supported by H2.")
     }
 
     @Override
-    AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository() {
         throw new UnsupportedOperationException("Full Outer Join is not supported by H2.")
     }
 
     @Override
-    AuthorJoinFetchRepository getAuthorJoinFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinFetchRepository getAuthorJoinFetchRepository() {
         return context.createBean(H2AuthorJoinFetchRepository)
     }
 
     @Override
-    AuthorJoinInnerRepository getAuthorJoinInnerRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinInnerRepository getAuthorJoinInnerRepository() {
         return context.getBean(H2AuthorJoinInnerRepository)
     }
 }
 
 @JdbcRepository(dialect = Dialect.H2)
-interface H2AuthorJoinFetchRepository extends AuthorJoinFetchRepository {
+interface H2AuthorJoinFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.H2)
-interface H2AuthorJoinInnerRepository extends AuthorJoinInnerRepository {
+interface H2AuthorJoinInnerRepository extends AuthorJoinTypeRepositories.AuthorJoinInnerRepository {
 }
 
 @JdbcRepository(dialect = Dialect.H2)
-interface H2AuthorJoinLeftFetchRepository extends AuthorJoinLeftFetchRepository {
+interface H2AuthorJoinLeftFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinLeftFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.H2)
-interface H2AuthorJoinLeftRepository extends AuthorJoinLeftRepository {
+interface H2AuthorJoinLeftRepository extends AuthorJoinTypeRepositories.AuthorJoinLeftRepository {
 }
 
 @JdbcRepository(dialect = Dialect.H2)
-interface H2AuthorJoinRightFetchRepository extends AuthorJoinRightFetchRepository {
+interface H2AuthorJoinRightFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinRightFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.H2)
-interface H2AuthorJoinRightRepository extends AuthorJoinRightRepository {
+interface H2AuthorJoinRightRepository extends AuthorJoinTypeRepositories.AuthorJoinRightRepository {
 }

@@ -18,74 +18,74 @@ class SqlServerJoinFetchSpec extends AbstractJoinFetchSpec implements MSSQLTestP
     }
 
     @Override
-    AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository() {
         return context.getBean(MSAuthorJoinLeftFetchRepository)
     }
 
     @Override
-    AuthorJoinLeftRepository getAuthorJoinLeftRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinLeftRepository getAuthorJoinLeftRepository() {
         return context.getBean(MSAuthorJoinLeftRepository)
     }
 
     @Override
-    AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository() {
         return context.getBean(MSAuthorJoinRightFetchRepository)
     }
 
     @Override
-    AuthorJoinRightRepository getAuthorJoinRightRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinRightRepository getAuthorJoinRightRepository() {
         return context.getBean(MSAuthorJoinRightRepository)
     }
 
     @Override
-    AuthorJoinOuterRepository getAuthorJoinOuterRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinOuterRepository getAuthorJoinOuterRepository() {
         return context.getBean(MSAuthorJoinOuterRepository)
     }
 
     @Override
-    AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository() {
         return context.getBean(MSAuthorJoinOuterFetchRepository)
     }
 
     @Override
-    AuthorJoinFetchRepository getAuthorJoinFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinFetchRepository getAuthorJoinFetchRepository() {
         return context.getBean(MSAuthorJoinFetchRepository)
     }
 
     @Override
-    AuthorJoinInnerRepository getAuthorJoinInnerRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinInnerRepository getAuthorJoinInnerRepository() {
         return context.getBean(MSAuthorJoinInnerRepository)
     }
 }
 
 @JdbcRepository(dialect = Dialect.SQL_SERVER)
-interface MSAuthorJoinFetchRepository extends AuthorJoinFetchRepository {
+interface MSAuthorJoinFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.SQL_SERVER)
-interface MSAuthorJoinInnerRepository extends AuthorJoinInnerRepository {
+interface MSAuthorJoinInnerRepository extends AuthorJoinTypeRepositories.AuthorJoinInnerRepository {
 }
 
 @JdbcRepository(dialect = Dialect.SQL_SERVER)
-interface MSAuthorJoinLeftFetchRepository extends AuthorJoinLeftFetchRepository {
+interface MSAuthorJoinLeftFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinLeftFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.SQL_SERVER)
-interface MSAuthorJoinLeftRepository extends AuthorJoinLeftRepository {
+interface MSAuthorJoinLeftRepository extends AuthorJoinTypeRepositories.AuthorJoinLeftRepository {
 }
 
 @JdbcRepository(dialect = Dialect.SQL_SERVER)
-interface MSAuthorJoinOuterFetchRepository extends AuthorJoinOuterFetchRepository {
+interface MSAuthorJoinOuterFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinOuterFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.SQL_SERVER)
-interface MSAuthorJoinOuterRepository extends AuthorJoinOuterRepository {
+interface MSAuthorJoinOuterRepository extends AuthorJoinTypeRepositories.AuthorJoinOuterRepository {
 }
 
 @JdbcRepository(dialect = Dialect.SQL_SERVER)
-interface MSAuthorJoinRightFetchRepository extends AuthorJoinRightFetchRepository {
+interface MSAuthorJoinRightFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinRightFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.SQL_SERVER)
-interface MSAuthorJoinRightRepository extends AuthorJoinRightRepository {
+interface MSAuthorJoinRightRepository extends AuthorJoinTypeRepositories.AuthorJoinRightRepository {
 }

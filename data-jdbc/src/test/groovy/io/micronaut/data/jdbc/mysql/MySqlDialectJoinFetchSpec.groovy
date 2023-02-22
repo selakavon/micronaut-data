@@ -5,6 +5,9 @@ import io.micronaut.data.model.query.builder.sql.Dialect
 import io.micronaut.data.tck.repositories.*
 import io.micronaut.data.tck.tests.AbstractJoinFetchSpec
 
+/**
+ * Abstract Spec class used for DBs using mysql dialect (MySql, MariaDB)
+ */
 abstract class MySqlDialectJoinFetchSpec extends AbstractJoinFetchSpec {
 
     boolean outerJoinSupported = false
@@ -22,66 +25,66 @@ abstract class MySqlDialectJoinFetchSpec extends AbstractJoinFetchSpec {
     }
 
     @Override
-    AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository() {
         return context.getBean(MySqlAuthorJoinLeftFetchRepository)
     }
 
     @Override
-    AuthorJoinLeftRepository getAuthorJoinLeftRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinLeftRepository getAuthorJoinLeftRepository() {
         return context.getBean(MySqlAuthorJoinLeftRepository)
     }
 
     @Override
-    AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository() {
         return context.getBean(MySqlAuthorJoinRightFetchRepository)
     }
 
     @Override
-    AuthorJoinRightRepository getAuthorJoinRightRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinRightRepository getAuthorJoinRightRepository() {
         return context.getBean(MySqlAuthorJoinRightRepository)
     }
 
     @Override
-    AuthorJoinOuterRepository getAuthorJoinOuterRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinOuterRepository getAuthorJoinOuterRepository() {
         throw new UnsupportedOperationException("Full Outer Join is not supported by MySql.")
     }
 
     @Override
-    AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository() {
         throw new UnsupportedOperationException("Full Outer Join is not supported by MySql.")
     }
 
     @Override
-    AuthorJoinFetchRepository getAuthorJoinFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinFetchRepository getAuthorJoinFetchRepository() {
         return context.getBean(MySqlAuthorJoinFetchRepository)
     }
 
     @Override
-    AuthorJoinInnerRepository getAuthorJoinInnerRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinInnerRepository getAuthorJoinInnerRepository() {
         return context.getBean(MySqlAuthorJoinInnerRepository)
     }
 }
 
 @JdbcRepository(dialect = Dialect.MYSQL)
-interface MySqlAuthorJoinFetchRepository extends AuthorJoinFetchRepository {
+interface MySqlAuthorJoinFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.MYSQL)
-interface MySqlAuthorJoinInnerRepository extends AuthorJoinInnerRepository {
+interface MySqlAuthorJoinInnerRepository extends AuthorJoinTypeRepositories.AuthorJoinInnerRepository {
 }
 
 @JdbcRepository(dialect = Dialect.MYSQL)
-interface MySqlAuthorJoinLeftFetchRepository extends AuthorJoinLeftFetchRepository {
+interface MySqlAuthorJoinLeftFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinLeftFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.MYSQL)
-interface MySqlAuthorJoinLeftRepository extends AuthorJoinLeftRepository {
+interface MySqlAuthorJoinLeftRepository extends AuthorJoinTypeRepositories.AuthorJoinLeftRepository {
 }
 
 @JdbcRepository(dialect = Dialect.MYSQL)
-interface MySqlAuthorJoinRightFetchRepository extends AuthorJoinRightFetchRepository {
+interface MySqlAuthorJoinRightFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinRightFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.MYSQL)
-interface MySqlAuthorJoinRightRepository extends AuthorJoinRightRepository {
+interface MySqlAuthorJoinRightRepository extends AuthorJoinTypeRepositories.AuthorJoinRightRepository {
 }

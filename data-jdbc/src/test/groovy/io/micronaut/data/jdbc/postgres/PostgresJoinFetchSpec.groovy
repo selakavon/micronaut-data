@@ -2,14 +2,8 @@ package io.micronaut.data.jdbc.postgres
 
 import io.micronaut.data.jdbc.annotation.JdbcRepository
 import io.micronaut.data.model.query.builder.sql.Dialect
-import io.micronaut.data.tck.repositories.AuthorJoinFetchRepository
-import io.micronaut.data.tck.repositories.AuthorJoinInnerRepository
-import io.micronaut.data.tck.repositories.AuthorJoinLeftFetchRepository
-import io.micronaut.data.tck.repositories.AuthorJoinLeftRepository
-import io.micronaut.data.tck.repositories.AuthorJoinOuterFetchRepository
-import io.micronaut.data.tck.repositories.AuthorJoinOuterRepository
-import io.micronaut.data.tck.repositories.AuthorJoinRightFetchRepository
-import io.micronaut.data.tck.repositories.AuthorJoinRightRepository
+
+import io.micronaut.data.tck.repositories.AuthorJoinTypeRepositories
 import io.micronaut.data.tck.repositories.AuthorRepository
 import io.micronaut.data.tck.repositories.BookRepository
 import io.micronaut.data.tck.tests.AbstractJoinFetchSpec
@@ -27,74 +21,74 @@ class PostgresJoinFetchSpec extends AbstractJoinFetchSpec implements PostgresTes
     }
 
     @Override
-    AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinLeftFetchRepository getAuthorJoinLeftFetchRepository() {
         return context.getBean(PostgresAuthorJoinLeftFetchRepository)
     }
 
     @Override
-    AuthorJoinLeftRepository getAuthorJoinLeftRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinLeftRepository getAuthorJoinLeftRepository() {
         return context.getBean(PostgresAuthorJoinLeftRepository)
     }
 
     @Override
-    AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinRightFetchRepository getAuthorJoinRightFetchRepository() {
         return context.getBean(PostgresAuthorJoinRightFetchRepository)
     }
 
     @Override
-    AuthorJoinRightRepository getAuthorJoinRightRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinRightRepository getAuthorJoinRightRepository() {
         return context.getBean(PostgresAuthorJoinRightRepository)
     }
 
     @Override
-    AuthorJoinOuterRepository getAuthorJoinOuterRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinOuterRepository getAuthorJoinOuterRepository() {
         return context.getBean(PostgresAuthorJoinOuterRepository)
     }
 
     @Override
-    AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinOuterFetchRepository getAuthorJoinOuterFetchRepository() {
         return context.getBean(PostgresAuthorJoinOuterFetchRepository)
     }
 
     @Override
-    AuthorJoinFetchRepository getAuthorJoinFetchRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinFetchRepository getAuthorJoinFetchRepository() {
         return context.getBean(PostgresAuthorJoinFetchRepository)
     }
 
     @Override
-    AuthorJoinInnerRepository getAuthorJoinInnerRepository() {
+    AuthorJoinTypeRepositories.AuthorJoinInnerRepository getAuthorJoinInnerRepository() {
         return context.getBean(PostgresAuthorJoinInnerRepository)
     }
 }
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-interface PostgresAuthorJoinFetchRepository extends AuthorJoinFetchRepository {
+interface PostgresAuthorJoinFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-interface PostgresAuthorJoinInnerRepository extends AuthorJoinInnerRepository {
+interface PostgresAuthorJoinInnerRepository extends AuthorJoinTypeRepositories.AuthorJoinInnerRepository {
 }
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-interface PostgresAuthorJoinLeftFetchRepository extends AuthorJoinLeftFetchRepository {
+interface PostgresAuthorJoinLeftFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinLeftFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-interface PostgresAuthorJoinLeftRepository extends AuthorJoinLeftRepository {
+interface PostgresAuthorJoinLeftRepository extends AuthorJoinTypeRepositories.AuthorJoinLeftRepository {
 }
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-interface PostgresAuthorJoinOuterFetchRepository extends AuthorJoinOuterFetchRepository {
+interface PostgresAuthorJoinOuterFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinOuterFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-interface PostgresAuthorJoinOuterRepository extends AuthorJoinOuterRepository {
+interface PostgresAuthorJoinOuterRepository extends AuthorJoinTypeRepositories.AuthorJoinOuterRepository {
 }
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-interface PostgresAuthorJoinRightFetchRepository extends AuthorJoinRightFetchRepository {
+interface PostgresAuthorJoinRightFetchRepository extends AuthorJoinTypeRepositories.AuthorJoinRightFetchRepository {
 }
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-interface PostgresAuthorJoinRightRepository extends AuthorJoinRightRepository {
+interface PostgresAuthorJoinRightRepository extends AuthorJoinTypeRepositories.AuthorJoinRightRepository {
 }
